@@ -6,12 +6,54 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
+  <style>
+    .section {
+      width: 200px;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;  
+    }
+    .section__item{
+        height: 100px;
+        width: 120px;
+        flex-shrink: 0;
+        scroll-snap-stop: always;
+        scroll-snap-align: start;
+    }
+    .section2 {
+      height: 250px;
+      /* display: flex; */
+      overflow-y: auto;
+      scroll-snap-type: y proximity;  
+    }
+    .section__item2{
+        height: 100px;
+        /* width: 120px; */
+        /* flex-shrink: 0; */
+        scroll-snap-stop: always;
+        scroll-snap-align: start; 
+    }
+  </style>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
         <h1>测试模块加载控制台打印</h1>
+        <div class="section">
+          <div class="section__item" style="background-color:red">Item 1</div>
+          <div class="section__item" style="background-color:green">Item 2</div>
+          <div class="section__item" style="background-color:blue" >Item 3</div>
+          <div class="section__item" style="background-color:gold">Item 4</div>
+          <div class="section__item" style="background-color:lightblue">Item 5</div>
+        </div>
+        <div class="section2">
+          <div class="section__item2" style="background-color:red">Item 1</div>
+          <div class="section__item2" style="background-color:green">Item 2</div>
+          <div class="section__item2" style="background-color:blue" >Item 3</div>
+          <div class="section__item2" style="background-color:gold">Item 4</div>
+          <div class="section__item2" style="background-color:lightblue">Item 5</div>
+        </div>
     </div>
   </body>
 </html>
